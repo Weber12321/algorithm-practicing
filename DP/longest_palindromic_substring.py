@@ -3,19 +3,19 @@ class Solution:
         if len(s) <= 1 or s == s[::-1]:
             return s
         else:
-            maxlen = 1
+            max_len = 1
             start = 0
             for i in range(1, len(s)):
-                odd = s[i - maxlen - 1: i + 1]
-                even = s[i - maxlen: i + 1]
-                if i - maxlen - 1 >= 0 and odd == odd[::-1]:
-                    start = i - maxlen - 1
-                    maxlen = maxlen + 2
+                odd = s[i - max_len - 1: i + 1]
+                even = s[i - max_len: i + 1]
+                if i - max_len - 1 >= 0 and odd == odd[::-1]:
+                    start = i - max_len - 1
+                    max_len = max_len + 2
                     continue
                 if even == even[::-1]:
-                    start = i - maxlen
-                    maxlen = maxlen + 1
-        return s[start: start + maxlen]
+                    start = i - max_len
+                    max_len = max_len + 1
+        return s[start: start + max_len]
 
 
 if __name__ == '__main__':
