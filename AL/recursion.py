@@ -1,6 +1,6 @@
 class Solution(object):
     @staticmethod
-    def inputer() -> int:
+    def input_number() -> int:
         while True:
             try:
                 _num = int(input("input a number: "))
@@ -8,11 +8,11 @@ class Solution(object):
                     print(f'integer must be positive, plz re-input!')
                     continue
                 else:
-                    break
+                    return _num
+
             except ValueError:
                 print(f'number must be integer, plz re-input!')
                 continue
-        return _num
 
     def factorial(self, num: int) -> int:
         if num <= 1:
@@ -65,5 +65,4 @@ class Solution(object):
 
 if __name__ == '__main__':
     s = Solution()
-    # print(s.greatest_common_divisor(s.inputer(), s.inputer()))
-    print(s.decimal_to_binary(s.inputer()))
+    print(s.decimal_to_binary(s.input_number()))
